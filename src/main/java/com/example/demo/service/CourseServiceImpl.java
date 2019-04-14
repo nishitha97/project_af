@@ -5,7 +5,9 @@ import com.example.demo.domain.CourseDTO;
 import com.example.demo.domain.User;
 import com.example.demo.repository.AssignmentRepository;
 import com.example.demo.repository.CourseRepository;
+import com.example.demo.repository.SubmissionRepository;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.uploadFileResponse.UploadFileResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,9 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     AssignmentRepository assignmentRepository;
+
+    @Autowired
+    SubmissionRepository submissionRepository;
 
     @Override
     public void createCourse(CourseDTO courseDTO) throws Exception {
@@ -48,6 +53,11 @@ public class CourseServiceImpl implements CourseService {
         }
 
 
+    }
+
+    @Override
+    public void saveUploadResponse(UploadFileResponse res) {
+        submissionRepository.save(res);
     }
 
 

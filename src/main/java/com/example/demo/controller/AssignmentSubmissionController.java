@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.CourseService;
 import com.example.demo.uploadFileResponse.UploadFileResponse;
 import com.example.demo.util.DownloadUtility;
 import com.example.demo.util.UploadUtility;
@@ -24,12 +25,18 @@ public class AssignmentSubmissionController {
     @Autowired
     DownloadUtility downloadUtility;
 
+    @Autowired
+    CourseService courseService;
+
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/upload")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
-        return uploadUtility.uploadFile(file);
+        UploadFileResponse res= uploadUtility.uploadFile(file);
+        courseService.saveUploadResponse(res);
+        return res;
     }
+
 
     @GetMapping("/{fileName}/download")
     public ResponseEntity<Resource> downloadFile(@PathVariable("fileName") String fileName, HttpServletRequest request) throws Exception {

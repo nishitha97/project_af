@@ -1,17 +1,22 @@
 package com.example.demo.uploadFileResponse;
 
-public class UploadFileResponse {
+import java.util.Date;
 
+public class UploadFileResponse {
+    private String submittedUserID;
     private String fileName;
     private String fileDownloadUri;
     private String fileType;
+    private String uploadedDate=new Date().toString();
     private long size;
 
-    public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size) {
+    public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size, String submittedUserID, String uploadedDate) {
         this.fileName = fileName;
         this.fileDownloadUri = fileDownloadUri;
         this.fileType = fileType;
         this.size = size;
+        this.submittedUserID = submittedUserID;
+        this.uploadedDate=uploadedDate;
     }
 
     public String getFileName() {
@@ -46,7 +51,16 @@ public class UploadFileResponse {
         this.size = size;
     }
 
+    public String getSubmittedUserID() {
+        return submittedUserID;
+    }
 
+    public void setSubmittedUserID(String submittedUserID) {
+        this.submittedUserID = submittedUserID;
+    }
 
+    public String getUploadedDate() {
+        return uploadedDate;
+    }
 
 }

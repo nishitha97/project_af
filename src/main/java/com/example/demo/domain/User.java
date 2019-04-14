@@ -11,18 +11,21 @@ public class User {
     private String id;
 
     @NotNull
-    @Size(min=2,max=30, message="Name should have at least 2 characters")
+    @Size(min = 2, max = 30, message = "Name should have at least 2 characters")
     protected String name;
 
     @NotNull
-    @Size(min=2, max= 20, message="Email should have at least 2 characters")
+    @Size(min = 2, max = 20, message = "Email should have at least 2 characters")
     protected String email;
 
     protected String role;
 
     @NotNull
-    protected boolean isDeleted=false;
+    protected boolean isDeleted = false;
 
+    private String username;
+
+    private String password;
 
     public String getId() {
         return id;
@@ -56,12 +59,24 @@ public class User {
         isDeleted = deleted;
     }
 
-    public String getRole(){
+    public String getRole() {
         return role;
     }
 
+    public String getUsername() {
+        return username;
+    }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 }

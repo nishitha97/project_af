@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.Constants.Constants;
 import com.example.demo.domain.Admin;
 import com.example.demo.domain.Instructor;
+import com.example.demo.domain.Student;
 import com.example.demo.domain.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.util.EmailClient;
@@ -30,6 +31,8 @@ public class UserServiceImpl implements UserService {
             user = new Instructor(user.getName(), user.getEmail());
             //callEmailService(emailClient,user);
 
+        }else if(role.equalsIgnoreCase(Constants.ROLE_STUDENT)) {
+            user=new Student(user.getName(),user.getEmail(),user.getUsername(),user.getPassword());
         }
 
 

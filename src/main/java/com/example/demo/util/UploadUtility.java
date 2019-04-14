@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import java.util.Date;
+
 @Component
 public class UploadUtility {
 
@@ -25,7 +27,7 @@ public class UploadUtility {
 
         System.out.println("uploaded");
         return new UploadFileResponse(filename, fileDownloadUri,
-                file.getContentType(), file.getSize());
+                file.getContentType(), file.getSize(),"useridhere",new Date().toString());
 
 
 
