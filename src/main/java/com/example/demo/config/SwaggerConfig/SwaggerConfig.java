@@ -1,4 +1,4 @@
-package com.example.demo.swaggerController;
+package com.example.demo.config.SwaggerConfig;
 
 
 import org.springframework.context.annotation.Bean;
