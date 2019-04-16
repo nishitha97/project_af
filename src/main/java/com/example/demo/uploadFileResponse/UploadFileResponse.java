@@ -7,7 +7,7 @@ public class UploadFileResponse {
     private String fileName;
     private String fileDownloadUri;
     private String fileType;
-    private String uploadedDate=new Date().toString();
+    private String uploadedDate;
     private long size;
 
     public UploadFileResponse(String fileName, String fileDownloadUri, String fileType, long size, String submittedUserID, String uploadedDate) {
