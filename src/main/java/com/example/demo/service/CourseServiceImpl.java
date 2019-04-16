@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.config.ApplicationProperties;
 import com.example.demo.domain.AssignmentDTO;
 import com.example.demo.domain.CourseDTO;
 import com.example.demo.domain.User;
@@ -27,6 +28,8 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     SubmissionRepository submissionRepository;
+
+
 
     @Override
     public void createCourse(CourseDTO courseDTO) throws Exception {
