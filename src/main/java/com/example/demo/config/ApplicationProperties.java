@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
+import sun.net.smtp.SmtpClient;
+
 
 @Component
 @ConfigurationProperties(prefix = "spring.mail", ignoreUnknownFields = false)
@@ -15,17 +17,11 @@ public class ApplicationProperties {
     private String password;
     private String port;
 
-
-    public String getProperties() {
+    public Properties getProperties() {
         return properties;
     }
 
-    public void setProperties(String properties) {
-        this.properties = properties;
-    }
-
-    private String properties;
-
+    private final Properties properties=new Properties();
 
     public String getUserName() {
         return userName;
@@ -60,4 +56,47 @@ public class ApplicationProperties {
         this.host = host;
     }
 
+    public static class Properties {
+        private final Mail mail=new Mail();
+
+        public Mail getMail() {
+            return mail;
+        }
+
+
+    }
+
+    public static class Mail{
+        private final Smtp smtp =new Smtp();
+
+        public Smtp getSmtp() {
+            return smtp;
+        }
+    }
+
+
+    public static class Smtp{
+
+        private final Starttls starttls=new Starttls();
+
+        public Starttls getStarttls() {
+            return starttls;
+        }
+
+    }
+
+    public static class Starttls{
+
+        private String enable;
+
+        public String getEnable() {
+            return enable;
+        }
+
+        public void setEnable(String enable) {
+            this.enable = enable;
+        }
+
+
+    }
 }
