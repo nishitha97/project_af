@@ -27,7 +27,7 @@ public class UserServiceController{
 
     }
 
-    @ResponseStatus(HttpStatus.NOT_MODIFIED)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping(value="/{id}")
     public void deleteUser(@PathVariable("id")  String id) {
 

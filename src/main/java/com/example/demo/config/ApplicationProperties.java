@@ -1,10 +1,8 @@
 package com.example.demo.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-import sun.net.smtp.SmtpClient;
 
 
 @Component
@@ -12,6 +10,7 @@ import sun.net.smtp.SmtpClient;
 @PropertySource("classpath:application.properties")
 public class ApplicationProperties {
 
+    private final Properties properties = new Properties();
     private String host;
     private String userName;
     private String password;
@@ -20,8 +19,6 @@ public class ApplicationProperties {
     public Properties getProperties() {
         return properties;
     }
-
-    private final Properties properties=new Properties();
 
     public String getUserName() {
         return userName;
@@ -57,7 +54,7 @@ public class ApplicationProperties {
     }
 
     public static class Properties {
-        private final Mail mail=new Mail();
+        private final Mail mail = new Mail();
 
         public Mail getMail() {
             return mail;
@@ -66,8 +63,8 @@ public class ApplicationProperties {
 
     }
 
-    public static class Mail{
-        private final Smtp smtp =new Smtp();
+    public static class Mail {
+        private final Smtp smtp = new Smtp();
 
         public Smtp getSmtp() {
             return smtp;
@@ -75,9 +72,9 @@ public class ApplicationProperties {
     }
 
 
-    public static class Smtp{
+    public static class Smtp {
 
-        private final Starttls starttls=new Starttls();
+        private final Starttls starttls = new Starttls();
 
         public Starttls getStarttls() {
             return starttls;
@@ -85,7 +82,7 @@ public class ApplicationProperties {
 
     }
 
-    public static class Starttls{
+    public static class Starttls {
 
         private String enable;
 
