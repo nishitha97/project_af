@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.Constants.Constants;
-import com.example.demo.config.ApplicationProperties;
+import com.example.demo.config.MailApplicationProperties;
 import com.example.demo.domain.Admin;
 import com.example.demo.domain.Instructor;
 import com.example.demo.domain.Student;
@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     EmailClient emailClient;
 
     @Autowired
-    ApplicationProperties applicationProperties;
+    MailApplicationProperties mailApplicationProperties;
 
     @Override
     public String saveData(User user, String role) {
@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUsers() {
 
-        System.out.println(applicationProperties.getProperties().getMail().getSmtp().getStarttls().getEnable());
+        System.out.println(mailApplicationProperties.getProperties().getMail().getSmtp().getStarttls().getEnable());
         List<User> userList = repository.findAllByIsDeletedIsFalse();
         return userList;
 

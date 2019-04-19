@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.domain.AssignmentDTO;
 import com.example.demo.domain.CourseDTO;
-import com.example.demo.uploadFileResponse.UploadFileResponse;
+import com.example.demo.domain.uploadFileResponse.UploadFileResponse;
 
 import javax.validation.Valid;
 

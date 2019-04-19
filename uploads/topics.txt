@@ -1,0 +1,9 @@
+
+
+1.microservice architecture used by amazon aws and its scalibility and realiability
+
+2.cloud architecture used by amazon aws and its reliability and usability
+
+3.mvc architecture used to develop ios apps and its performance and usablility
+
+4.layered architecture of android and its performance and realiability

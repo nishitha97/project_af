@@ -1,6 +1,4 @@
-package com.example.demo.uploadFileResponse;
-
-import java.util.Date;
+package com.example.demo.domain.uploadFileResponse;
 
 public class UploadFileResponse {
     private String submittedUserID;
@@ -16,7 +14,7 @@ public class UploadFileResponse {
         this.fileType = fileType;
         this.size = size;
         this.submittedUserID = submittedUserID;
-        this.uploadedDate=uploadedDate;
+        this.uploadedDate = uploadedDate;
     }
 
     public String getFileName() {

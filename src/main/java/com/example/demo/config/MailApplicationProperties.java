@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "spring.mail", ignoreUnknownFields = false)
 @PropertySource("classpath:application.properties")
-public class ApplicationProperties {
+public class MailApplicationProperties {
 
     private final Properties properties = new Properties();
     private String host;

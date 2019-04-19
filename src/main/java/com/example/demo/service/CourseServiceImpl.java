@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.config.ApplicationProperties;
 import com.example.demo.domain.AssignmentDTO;
 import com.example.demo.domain.CourseDTO;
 import com.example.demo.domain.User;
@@ -8,7 +7,7 @@ import com.example.demo.repository.AssignmentRepository;
 import com.example.demo.repository.CourseRepository;
 import com.example.demo.repository.SubmissionRepository;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.uploadFileResponse.UploadFileResponse;
+import com.example.demo.domain.uploadFileResponse.UploadFileResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

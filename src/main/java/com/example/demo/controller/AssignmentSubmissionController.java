@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.domain.uploadFileResponse.UploadFileResponse;
 import com.example.demo.service.CourseService;
-import com.example.demo.uploadFileResponse.UploadFileResponse;
 import com.example.demo.util.DownloadUtility;
 import com.example.demo.util.UploadUtility;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ public class AssignmentSubmissionController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/upload")
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) throws Exception {
-        UploadFileResponse res= uploadUtility.uploadFile(file);
+        UploadFileResponse res = uploadUtility.uploadFile(file);
         courseService.saveUploadResponse(res);
         return res;
     }

@@ -2,7 +2,7 @@ package com.example.demo.util;
 
 
 import com.example.demo.config.service.FileStorageService;
-import com.example.demo.uploadFileResponse.UploadFileResponse;
+import com.example.demo.domain.uploadFileResponse.UploadFileResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
