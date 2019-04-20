@@ -1,10 +1,13 @@
 package com.example.demo.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+
+@Document(collection = "assignments")
 public class AssignmentDTO {
 
     @NotNull

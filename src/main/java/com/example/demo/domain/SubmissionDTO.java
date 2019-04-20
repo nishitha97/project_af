@@ -1,10 +1,13 @@
 package com.example.demo.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotNull;
 
+
+@Document(collection = "submissions")
 public class SubmissionDTO {
 
     @JsonIgnore

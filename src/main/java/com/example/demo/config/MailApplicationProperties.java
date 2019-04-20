@@ -6,19 +6,19 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@ConfigurationProperties(prefix = "spring.mail", ignoreUnknownFields = false)
+@ConfigurationProperties(prefix = "spring.mail")
 @PropertySource("classpath:application.properties")
 public class MailApplicationProperties {
 
-    private final Properties properties = new Properties();
+  //  private final Properties properties = new Properties();
     private String host;
     private String userName;
     private String password;
     private String port;
 
-    public Properties getProperties() {
-        return properties;
-    }
+//    public Properties getProperties() {
+//        return properties;
+//    }
 
     public String getUserName() {
         return userName;
@@ -53,47 +53,47 @@ public class MailApplicationProperties {
         this.host = host;
     }
 
-    public static class Properties {
-        private final Mail mail = new Mail();
-
-        public Mail getMail() {
-            return mail;
-        }
-
-
-    }
-
-    public static class Mail {
-        private final Smtp smtp = new Smtp();
-
-        public Smtp getSmtp() {
-            return smtp;
-        }
-    }
-
-
-    public static class Smtp {
-
-        private final Starttls starttls = new Starttls();
-
-        public Starttls getStarttls() {
-            return starttls;
-        }
-
-    }
-
-    public static class Starttls {
-
-        private String enable;
-
-        public String getEnable() {
-            return enable;
-        }
-
-        public void setEnable(String enable) {
-            this.enable = enable;
-        }
-
-
-    }
+//    public static class Properties {
+//        private final Mail mail = new Mail();
+//
+//        public Mail getMail() {
+//            return mail;
+//        }
+//
+//
+//    }
+//
+//    public static class Mail {
+//        private final Smtp smtp = new Smtp();
+//
+//        public Smtp getSmtp() {
+//            return smtp;
+//        }
+//    }
+//
+//
+//    public static class Smtp {
+//
+//        private final Starttls starttls = new Starttls();
+//
+//        public Starttls getStarttls() {
+//            return starttls;
+//        }
+//
+//    }
+//
+//    public static class Starttls {
+//
+//        private String enable;
+//
+//        public String getEnable() {
+//            return enable;
+//        }
+//
+//        public void setEnable(String enable) {
+//            this.enable = enable;
+//        }
+//
+//
+//    }
 }

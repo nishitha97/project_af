@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUsers() {
 
-        System.out.println(mailApplicationProperties.getProperties().getMail().getSmtp().getStarttls().getEnable());
+       // System.out.println(mailApplicationProperties.getProperties().getMail().getSmtp().getStarttls().getEnable());
         List<User> userList = repository.findAllByIsDeletedIsFalse();
         return userList;
 
